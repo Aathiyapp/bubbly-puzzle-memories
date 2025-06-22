@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Heart, MessageCircle, Upload, Eye, Truck, Star, ChevronDown, Phone, Instagram, Facebook } from "lucide-react";
+import { Heart, MessageCircle, Eye, Truck, Star, Phone, Instagram, Facebook, Shield, Award, Users } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -17,12 +16,36 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-pink-100">
-      {/* Page Title */}
-      <div className="bg-white py-4 px-4 border-b border-pink-100">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-2xl font-bold text-gray-800">Bubbli.in - Personalized Puzzle Gifts</h1>
+      {/* Enhanced Header with Logo */}
+      <header className="bg-white shadow-lg border-b-4 border-pink-300">
+        <div className="max-w-6xl mx-auto py-6 px-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center shadow-lg">
+                <Heart className="h-8 w-8 text-white fill-current" />
+              </div>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-800">Bubbli.in</h1>
+                <p className="text-pink-600 font-medium">Personalized Puzzle Gifts</p>
+              </div>
+            </div>
+            <div className="hidden md:flex items-center space-x-6">
+              <div className="flex items-center text-green-600">
+                <Shield className="h-5 w-5 mr-2" />
+                <span className="text-sm font-medium">100% Safe</span>
+              </div>
+              <div className="flex items-center text-blue-600">
+                <Award className="h-5 w-5 mr-2" />
+                <span className="text-sm font-medium">Premium Quality</span>
+              </div>
+              <div className="flex items-center text-purple-600">
+                <Users className="h-5 w-5 mr-2" />
+                <span className="text-sm font-medium">500+ Happy Customers</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* Hero Section */}
       <section className="relative py-20 px-4 text-center bg-gradient-to-r from-pink-100 to-pink-200">
@@ -35,6 +58,23 @@ const Index = () => {
             Transform your favorite photos into beautiful personalized puzzles. 
             Perfect gifts that bring joy piece by piece.
           </p>
+          
+          {/* Trust Indicators */}
+          <div className="flex justify-center items-center space-x-6 mb-8 text-sm text-gray-600">
+            <div className="flex items-center">
+              <Shield className="h-4 w-4 mr-1 text-green-500" />
+              <span>Child Safe Materials</span>
+            </div>
+            <div className="flex items-center">
+              <Award className="h-4 w-4 mr-1 text-blue-500" />
+              <span>Premium Quality</span>
+            </div>
+            <div className="flex items-center">
+              <Star className="h-4 w-4 mr-1 text-yellow-500 fill-current" />
+              <span>5.0 Rating</span>
+            </div>
+          </div>
+
           <Button 
             size="lg" 
             className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -43,6 +83,10 @@ const Index = () => {
             <MessageCircle className="mr-3 h-6 w-6" />
             Order on WhatsApp
           </Button>
+          
+          <p className="text-sm text-gray-500 mt-4">
+            ✅ Free Preview Before Production | 🚚 Fast Delivery | 💯 100% Satisfaction Guarantee
+          </p>
         </div>
       </section>
 
@@ -112,37 +156,56 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Upload Form Section */}
+      {/* How to Order - Simplified */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">
-            Upload Your Photos & Videos
+            Ready to Create Your Puzzle?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Send us your precious memories and we'll create a stunning puzzle preview for your approval - completely free!
+            Simply send us your photo on WhatsApp and we'll handle everything!
           </p>
           
-          <div className="bg-gradient-to-r from-pink-50 to-pink-100 p-8 rounded-2xl shadow-lg">
-            {/* Google Form Embed */}
-            <div className="bg-white p-6 rounded-xl border-2 border-dashed border-pink-300 mb-6">
-              <iframe 
-                src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" 
-                width="100%" 
-                height={400}
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}
-                className="rounded-lg"
-                title="Photo Upload Form"
-              >
-                Loading form...
-              </iframe>
+          <div className="bg-gradient-to-r from-green-50 to-green-100 p-8 rounded-2xl shadow-lg">
+            <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Send Your Photo</h3>
+                <p className="text-gray-600">WhatsApp us your favorite photo</p>
+              </div>
+              
+              <div className="text-4xl text-green-500">→</div>
+              
+              <div className="text-center">
+                <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Eye className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Approve Preview</h3>
+                <p className="text-gray-600">We send you a free preview</p>
+              </div>
+              
+              <div className="text-4xl text-blue-500">→</div>
+              
+              <div className="text-center">
+                <div className="w-20 h-20 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Truck className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Receive Puzzle</h3>
+                <p className="text-gray-600">Get your custom puzzle delivered</p>
+              </div>
             </div>
             
-            <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-              <p className="text-green-800 font-semibold">
-                ✅ We'll send you a FREE preview for approval before production!
-              </p>
+            <div className="mt-8">
+              <Button 
+                size="lg" 
+                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-xl rounded-full shadow-lg"
+                onClick={() => sendWhatsAppMessage("Hi! I want to create a personalized puzzle. Here's my photo: [Please attach your photo]")}
+              >
+                <MessageCircle className="mr-3 h-6 w-6" />
+                Start Your Order Now
+              </Button>
             </div>
           </div>
         </div>
@@ -158,7 +221,7 @@ const Index = () => {
             <Card className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
               <CardContent className="pt-6">
                 <div className="mx-auto mb-4 w-20 h-20 bg-pink-500 rounded-full flex items-center justify-center">
-                  <Upload className="h-10 w-10 text-white" />
+                  <MessageCircle className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">1. Send Your Photo</h3>
                 <p className="text-gray-600">
