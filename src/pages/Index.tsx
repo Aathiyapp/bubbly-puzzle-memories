@@ -17,6 +17,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-pink-100">
+      {/* Page Title */}
+      <div className="bg-white py-4 px-4 border-b border-pink-100">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-2xl font-bold text-gray-800">Bubbli.in - Personalized Puzzle Gifts</h1>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative py-20 px-4 text-center bg-gradient-to-r from-pink-100 to-pink-200">
         <div className="max-w-4xl mx-auto">
@@ -116,21 +123,15 @@ const Index = () => {
           </p>
           
           <div className="bg-gradient-to-r from-pink-50 to-pink-100 p-8 rounded-2xl shadow-lg">
-            <div className="mb-6">
-              <Upload className="mx-auto h-16 w-16 text-pink-600 mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-800 mb-2">Ready to Upload?</h3>
-              <p className="text-gray-600">Click below to share your photos through our secure form</p>
-            </div>
-            
-            {/* Google Form Embed Placeholder */}
+            {/* Google Form Embed */}
             <div className="bg-white p-6 rounded-xl border-2 border-dashed border-pink-300 mb-6">
               <iframe 
                 src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" 
                 width="100%" 
-                height="400" 
-                frameBorder="0" 
-                marginHeight="0" 
-                marginWidth="0"
+                height={400}
+                frameBorder={0}
+                marginHeight={0}
+                marginWidth={0}
                 className="rounded-lg"
                 title="Photo Upload Form"
               >
